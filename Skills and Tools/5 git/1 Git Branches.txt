@@ -1,0 +1,39 @@
+1)
+>cd \Users\17189\repos\rherskovitz\recipe-data
+>git switch -c diet
+2)
+>echo low calorie ingredients>>ingredients.txt
+3)
+>git branch --all
+4)
+>git commit -am "low-calorie ingredients on diet"
+5)
+>git switch main
+>echo high-calorie ingredients>>ingredients.txt
+6)
+>git stash
+>git switch diet
+>echo Warning, low calorie diets may be bad for your health> Warning.txt
+>git add .
+>git commit -m "added warning file"
+-pushed
+7)
+>git switch main
+>git stash pop
+>git commit -am "high-calorie ingredients"
+-pushed
+8)
+-done on github
+9)
+>git fetch
+>git switch animal-food
+10)
+>echo cat cans to save the cats from starvation!!>cat-food.txt
+>git add .
+>git commit -m "food for cats"
+-pushed
+
+
+
+
+

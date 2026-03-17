@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiBasics.BasicControls"
+             Title=" BasicControls"
+             BackgroundColor="DarkBlue">
+    <VerticalStackLayout BackgroundColor="White" Margin="10" Spacing="10">
+        <Image Source="p1p.jpeg." HeightRequest="100"/>
+        <Label x:Name="lblMessage" Text="Let us have some fun and test funny fonts!" FontFamily="WEBDINGS"/>
+        <Label Text="Last Name" BackgroundColor="PowderBlue"/>
+        <Entry x:Name="txtLastName" Placeholder="Last Name"/>
+        <HorizontalStackLayout>
+            <CheckBox x:Name="chkActive"/>
+            <Label Text="Active" VerticalOptions="Center"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <RadioButton x:Name="optPrivate" Content="Private" Value="private" IsChecked="True"/>
+            <RadioButton x:Name="optPublic" Content="Public" Value="public"/>
+        </HorizontalStackLayout>
+        <Switch x:Name="swOnOff" IsToggled="False"/>
+        <Slider x:Name="slHeight" Minimum="1" Maximum="100"/>
+        <Button x:Name="btnSave" Text="Save" Clicked="btnSave_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>

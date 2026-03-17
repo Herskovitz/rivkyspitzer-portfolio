@@ -1,0 +1,27 @@
+>cd "\Users\17189\repos\rherskovitz\How to - Git"
+>mkdir  recipe-data
+>cd \Users\17189\repos\rherskovitz\How to - Git\recipe-data
+>git init
+>echo ingrediets 1-10>ingredients.txt
+>echo freeze, boil, cool, enjoy!>recipe.txt
+>echo meal 1, meal 2, meal 3 and meal 4.>meals.txt
+>git add .
+>git commit -m "recipe files with initial data"
+>git remote add origin https://github.com/Herskovitz/recipe-data.git
+>git push -u origin main
+>echo mistake!> recipe.txt
+>git restore .
+>echo mistake on meals>>meals.txt
+>git add .
+>git restore --worktree --staged .
+>echo =junk!>>ingredients.txt
+>git add "ingredients.txt"
+>git commit -m "junky ingredients"
+>git reset 799fa0e --hard
+>echo make sure to add some fun>>ingredients.txt
+>git add .
+>git commit -m "added ingredient"
+>git reset 799fa0e --soft
+>echo remember to have fun>>recipe.txt
+>git add .
+>git commit -m "committing two changes"

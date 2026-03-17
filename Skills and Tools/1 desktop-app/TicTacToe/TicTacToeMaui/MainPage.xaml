@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TicTacToeMaui.MainPage">
+    <ContentPage.Resources>
+        <Style TargetType="Button" x:Key="game-button">
+            <Setter Property="CornerRadius" Value="40" />
+        </Style>
+    </ContentPage.Resources>
+    <Grid  ColumnDefinitions="*" RowDefinitions="Auto,Auto,*">
+        <FlexLayout Wrap="Wrap" Grid.Column="0" Grid.Row="0" JustifyContent="SpaceAround" AlignItems="Start">
+            <VerticalStackLayout Margin="4">
+                <Label Text="3 simultaneous games." />
+                <Label Text="Choose which one to play" />
+                <RadioButton x:Name="Game1Rb" Content="{OnIdiom {Binding GameName}, Desktop={Binding GameStatusDescription}}" CheckedChanged="Game_CheckedChanged" IsChecked="True"/>
+                <RadioButton x:Name="Game2Rb" Content="{OnIdiom {Binding GameName}, Desktop={Binding GameStatusDescription}}" CheckedChanged="Game_CheckedChanged"/>
+                <RadioButton x:Name="Game3Rb" Content="{OnIdiom {Binding GameName}, Desktop={Binding GameStatusDescription}}" CheckedChanged="Game_CheckedChanged"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout >
+                <Label Text="{Binding GameModeHeader}" />
+                <RadioButton Content="2 Player"  />
+                <RadioButton x:Name="PlayAgainstComputerRb" Content="Play the Computer" />
+            </VerticalStackLayout>
+            <HorizontalStackLayout VerticalOptions="Center">
+                <Button x:Name="StartBtn"
+          Clicked="StartBtn_Clicked"
+          Text="{Binding StartButtonText}" 
+          TextTransform="Uppercase"
+          CornerRadius="5"
+          MaximumWidthRequest="300"
+          MaximumHeightRequest="100"
+          />
+            </HorizontalStackLayout>
+        </FlexLayout>
+        <VerticalStackLayout Grid.Row="1" Grid.Column="0">
+            <Line BackgroundColor="Black" StrokeThickness="1" />
+            <Label x:Name="ScoreLbl" Grid.Column="0"  HorizontalTextAlignment="Center"/>
+            <Label Text="{Binding GameStatusDescription}" HorizontalTextAlignment="Center" BackgroundColor="LightYellow"/>
+        </VerticalStackLayout>
+        <Grid Margin="20" ColumnDefinitions="*,*,*" RowDefinitions="*,*,*" Grid.Column="0" Grid.Row="2">
+            <Button x:Name="btn1" Grid.Column="0" Grid.Row="0" Style="{StaticResource Key=game-button}" Clicked="btn_Clicked" BindingContext="{Binding Spots[0]}" Text="{Binding SpotValueDescription}"/>
+            <Button x:Name="btn2" Grid.Column="1" Grid.Row="0" Style="{StaticResource Key=game-button}" Clicked="btn_Clicked" BindingContext="{Binding Spots[1]}" Text="{Binding SpotValueDescription}"/>
+            <Button x:Name="btn3" Grid.Column="2" Grid.Row="0" Style="{StaticResource Key=game-button}" Clicked="btn_Clicked" BindingContext="{Binding Spots[2]}" Text="{Binding SpotValueDescription}"/>
+            <Button x:Name="btn4" Grid.Column="0" Grid.Row="1" Style="{StaticResource Key=game-button}" Clicked="btn_Clicked" BindingContext="{Binding Spots[3]}" Text="{Binding SpotValueDescription}"/>
+            <Button x:Name="btn5" Grid.Column="1" Grid.Row="1" Style="{StaticResource Key=game-button}" Clicked="btn_Clicked" BindingContext="{Binding Spots[4]}" Text="{Binding SpotValueDescription}"/>
+            <Button x:Name="btn6" Grid.Column="2" Grid.Row="1" Style="{StaticResource Key=game-button}" Clicked="btn_Clicked" BindingContext="{Binding Spots[5]}" Text="{Binding SpotValueDescription}"/>
+            <Button x:Name="btn7" Grid.Column="0" Grid.Row="2" Style="{StaticResource Key=game-button}" Clicked="btn_Clicked" BindingContext="{Binding Spots[6]}" Text="{Binding SpotValueDescription}"/>
+            <Button x:Name="btn8" Grid.Column="1" Grid.Row="2" Style="{StaticResource Key=game-button}" Clicked="btn_Clicked" BindingContext="{Binding Spots[7]}" Text="{Binding SpotValueDescription}"/>
+            <Button x:Name="btn9" Grid.Column="2" Grid.Row="2" Style="{StaticResource Key=game-button}" Clicked="btn_Clicked" BindingContext="{Binding Spots[8]}" Text="{Binding SpotValueDescription}"/>
+        </Grid>
+    </Grid>
+
+</ContentPage>
